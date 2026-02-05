@@ -1,5 +1,5 @@
 import peopleImg from '../assets/images/People.jpg'
-import PrimaryButton from './PrimaryButton';
+
 
 const AboutUs: React.FC = () => {
   return (
@@ -18,7 +18,9 @@ const AboutUs: React.FC = () => {
             contribute to open-source projects locally and globally.
           </p>
 
-         <PrimaryButton text='learn More'/>
+          <button className="inline-flex items-center gap-2 px-6 py-3 border border-blue-500 text-blue-500 rounded-full hover:bg-blue-500 hover:text-white transition">
+            Learn More →
+          </button>
         </div>
 
     

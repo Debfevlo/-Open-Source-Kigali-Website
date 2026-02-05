@@ -1,0 +1,63 @@
+import groupImg from '../assets/images/group2.png'
+const Explore = () => {
+  return (
+<section className="bg-[#FFF7F5] py-20 px-4 md:px-20">
+<div className="flex justify-center items-center mb-16 gap-12">
+  <button className="px-6 py-4 rounded-full bg-blue-500 text-white text-sm font-medium hover:cursor-pointer">
+    Connect with the Community
+  </button>
+
+  <button className="px-6 py-4 rounded-full border border-blue-400 text-blue-500 text-sm font-medium hover:cursor-pointer hover:bg-blue-500 hover:text-white">
+    Contribute to Projects
+  </button>
+
+  <button className="px-6 py-4 rounded-full border border-blue-400 text-blue-500 text-sm font-medium hover:cursor-pointer hover:bg-blue-500 hover:text-white">
+    Learn with the community
+  </button>
+</div>
+
+
+      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+
+        <div className="space-y-6">
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
+            Explore how you can connect, contribute and grow with us.
+          </h2>
+
+        
+          <p className="text-gray-600 max-w-lg">
+           Join a vibrant community of developers, designers and tech enthusiasts.
+          </p>
+
+        
+          <div className="space-y-3 text-gray-700 text-sm max-w-xl">
+
+            <p>
+              Connect, collaborate, and build meaningful open-source projects together.
+              Meet like-minded creators, share ideas, and grow through open source while
+              creating solutions with local and global impact.
+            </p>
+          </div>
+
+
+          <button className="inline-flex items-center gap-2 px-6 py-3 border border-blue-500 text-blue-500 rounded-full hover:bg-blue-500 hover:text-white transition">
+            Learn More →
+          </button>
+        </div>
+
+        <div className="relative">
+          <div className="rounded-2xl overflow-hidden shadow-lg">
+            <img
+              src={groupImg}
+              alt="Community collaboration"
+              className="w-full h-full object-cover"
+            />
+          </div>
+        </div>
+
+      </div>
+    </section>
+  )
+}
+
+export default Explore
