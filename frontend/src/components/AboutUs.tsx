@@ -1,16 +1,38 @@
+import peopleImg from '../assets/images/People.jpg'
+import PrimaryButton from './PrimaryButton';
 
-
-const AboutUs = () => {
+const AboutUs: React.FC = () => {
   return (
-    <div className="flex flex-row">
-      AboutUs
-      AboutUs
-      AboutUs
-      AboutUs
-      AboutUs
-      
-    </div>
-  )
-}
+    <section className=" py-20 px-4">
+      <div className="max-w-7xl  mx-auto py-4 flex flex-col md:flex-row items-center gap-8">
+        <div className="w-full md:w-1/2">
+          <p className="text-base font-bold text-primary-colour mb-2">About Us</p>
 
-export default AboutUs
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            Empowering Rwanda through Open Source.
+          </h2>
+
+          <p className="text-gray-700 mb-6">
+            Open Source Kigali (OSK) is a community of developers, designers,
+            and tech enthusiasts working together to empower Rwandans to
+            contribute to open-source projects locally and globally.
+          </p>
+
+         <PrimaryButton text='learn More'/>
+        </div>
+
+    
+        <div className="w-full md:w-1/2">
+          <img
+            src={peopleImg}
+            alt="Team collaboration"
+            className="w-full rounded-lg object-cover"
+          />
+        </div>
+
+      </div>
+    </section>
+  );
+};
+
+export default AboutUs;

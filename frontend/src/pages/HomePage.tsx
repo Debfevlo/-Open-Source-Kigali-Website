@@ -1,5 +1,6 @@
-import HeroSection from "../components/HeroSection"
 import AboutUs from "../components/AboutUs"
+import HeroSection from "../components/HeroSection"
+
 
 
 const HomePage = () => {
