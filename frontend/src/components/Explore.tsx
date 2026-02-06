@@ -1,19 +1,21 @@
+import { NavLink } from 'react-router-dom'
+
 import groupImg from '../assets/images/group2.png'
 const Explore = () => {
   return (
 <section className="bg-[#FFF7F5] py-20 px-4 md:px-20">
-<div className="flex justify-center items-center mb-16 gap-12">
-  <button className="px-6 py-4 rounded-full bg-blue-500 text-white text-sm font-medium hover:cursor-pointer">
-    Connect with the Community
-  </button>
+    <div className="flex flex-wrap justify-center md:justify-center items-center mb-16 gap-4 md:gap-12">
 
-  <button className="px-6 py-4 rounded-full border border-blue-400 text-blue-500 text-sm font-medium hover:cursor-pointer hover:bg-blue-500 hover:text-white">
-    Contribute to Projects
-  </button>
+        <div className="w-full sm:w-auto px-4 sm:px-6 py-3 sm:py-4 rounded-full bg-blue-500 text-white text-sm font-medium hover:cursor-pointer transition">
+          <NavLink to="/Login">Connect with the Community</NavLink>
+        </div>
+         <div className="w-full sm:w-auto px-4 sm:px-6 py-3 sm:py-4 rounded-full border border-blue-400 text-blue-500 text-sm font-medium hover:cursor-pointer hover:bg-blue-500 hover:text-white transition">
+          <NavLink to="/Login">Contribute to Projects</NavLink>
+        </div>
+        <div className="w-full sm:w-auto px-4 sm:px-6 py-3 sm:py-4 rounded-full border border-blue-400 text-blue-500 text-sm font-medium hover:cursor-pointer hover:bg-blue-500 hover:text-white transition">
+          <NavLink to="/Login">Learn with the community</NavLink>
+        </div>
 
-  <button className="px-6 py-4 rounded-full border border-blue-400 text-blue-500 text-sm font-medium hover:cursor-pointer hover:bg-blue-500 hover:text-white">
-    Learn with the community
-  </button>
 </div>
 
 
@@ -40,9 +42,9 @@ const Explore = () => {
           </div>
 
 
-          <button className="inline-flex items-center gap-2 px-6 py-3 border border-blue-500 text-blue-500 rounded-full hover:bg-blue-500 hover:text-white transition">
-            Learn More →
-          </button>
+         <div className="inline-flex items-center gap-2 px-6 py-3 border border-primary-colour text-primary-colour rounded-full hover:bg-primary-colour hover:text-white transition">
+          <NavLink to="/Login">Learn More →</NavLink>
+        </div>
         </div>
 
         <div className="relative">

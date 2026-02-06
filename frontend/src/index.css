@@ -1,5 +1,6 @@
 @import "tailwindcss";
 
 @theme {
-  --color-primary-colour: #52A3E0;
+  --color-primary-colour: #2b7fff;
+  --color-bold-black: #101828
 }

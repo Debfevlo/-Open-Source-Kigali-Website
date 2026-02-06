@@ -1,14 +1,15 @@
-import peopleImg from '../assets/images/People.jpg'
+import peopleImg from '../assets/images/People.png'
+import { NavLink } from 'react-router-dom';
 
 
 const AboutUs: React.FC = () => {
   return (
-    <section className=" py-20 px-4">
+    <section className="py-16 md:py-28 px-4">
       <div className="max-w-7xl  mx-auto py-4 flex flex-col md:flex-row items-center gap-8">
         <div className="w-full md:w-1/2">
           <p className="text-base font-bold text-primary-colour mb-2">About Us</p>
 
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-bold-black mb-4">
             Empowering Rwanda through Open Source.
           </h2>
 
@@ -18,9 +19,10 @@ const AboutUs: React.FC = () => {
             contribute to open-source projects locally and globally.
           </p>
 
-          <button className="inline-flex items-center gap-2 px-6 py-3 border border-blue-500 text-blue-500 rounded-full hover:bg-blue-500 hover:text-white transition">
-            Learn More →
-          </button>
+        <div className="inline-flex items-center gap-2 px-6 py-3 border border-primary-colour text-primary-colour rounded-full hover:bg-primary-colour hover:text-white transition">
+          <NavLink to="/Login">Learn More →</NavLink>
+        </div>
+        
         </div>
 
     
