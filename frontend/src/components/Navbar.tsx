@@ -3,7 +3,7 @@ import LogoImage from "../assets/images/logoopensource.png";
 import { Link, NavLink } from "react-router-dom";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
-import PrimaryButton from "./PrimaryButton";
+
 
 const Navbar = () => {
   const [openDropdown, setOpenDropdown] = useState<null | string>(null);
