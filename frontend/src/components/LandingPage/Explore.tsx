@@ -22,25 +22,17 @@ const Explore = () => {
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
 
         <div className="space-y-6">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 max-w-3xl mx-auto leading-tight">
             Explore how you can connect, contribute and grow with us.
           </h2>
 
         
-          <p className="text-gray-600 max-w-lg">
+          <p className="text-base md:text-lg text-gray-500 mb-6">
            Join a vibrant community of developers, designers and tech enthusiasts.
+           Connect, collaborate, and build meaningful open-source projects together.
+          Meet like-minded creators, share ideas, and grow through open source while
+          creating solutions with local and global impact.
           </p>
-
-        
-          <div className="space-y-3 text-gray-700 text-sm max-w-xl">
-
-            <p>
-              Connect, collaborate, and build meaningful open-source projects together.
-              Meet like-minded creators, share ideas, and grow through open source while
-              creating solutions with local and global impact.
-            </p>
-          </div>
-
 
          <div className="inline-flex items-center gap-2 px-6 py-3 border border-primary-colour text-primary-colour rounded-full hover:bg-primary-colour hover:text-white transition">
           <NavLink to="/Login">Learn More →</NavLink>
