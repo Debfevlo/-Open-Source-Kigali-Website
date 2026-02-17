@@ -1,6 +1,6 @@
 import { NavLink } from 'react-router-dom'
+import groupImg from '../../assets/images/group2.png'
 
-import groupImg from '../assets/images/group2.png'
 const Explore = () => {
   return (
 <section className="bg-[#FFF7F5] py-20 px-4 md:px-20">

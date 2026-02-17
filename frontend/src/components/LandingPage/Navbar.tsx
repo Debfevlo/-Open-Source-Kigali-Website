@@ -1,5 +1,5 @@
 import { useState, useEffect} from "react";
-import LogoImage from "../assets/images/logoopensource.png";
+import LogoImage from '../../assets/images/logoopensource.png'
 import { Link, NavLink } from "react-router-dom";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";

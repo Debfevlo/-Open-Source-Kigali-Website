@@ -1,8 +1,7 @@
-import peopleImg from '../assets/images/People.png'
-import { NavLink } from 'react-router-dom';
+import { NavLink } from "react-router-dom"
+import peopleImg from '../../assets/images/People.png'
 
-
-const AboutUs: React.FC = () => {
+const AboutUs = () => {
   return (
     <section className="py-16 md:py-28 px-4">
       <div className="max-w-7xl  mx-auto py-4 flex flex-col md:flex-row items-center gap-8">
@@ -36,7 +35,7 @@ const AboutUs: React.FC = () => {
 
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default AboutUs;
+export default AboutUs
