@@ -14,6 +14,8 @@ const HomePage = () => {
         <AboutUs/>
         <Explore/>
         <ContributionSection/>
+       
+        
     </div>
   )
 }

@@ -5,18 +5,3 @@
   --color-bold-black: #101828;
 }
 
-.swiper-pagination {
-  position: relative;
-  bottom: 0;
-}
-
-.swiper-pagination-bullet {
-  width: 8px;
-  height: 8px;
-  background: #cbd5e1;
-  opacity: 1;
-}
-
-.swiper-pagination-bullet-active {
-  background: #2563eb;
-}

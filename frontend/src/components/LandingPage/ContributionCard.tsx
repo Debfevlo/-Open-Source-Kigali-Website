@@ -1,4 +1,4 @@
-import { Laptop, Palette, FileText } from "lucide-react";
+import { Laptop, Palette, FileText,Users } from "lucide-react";
 import React from "react";
 
 // Map of contribution types to icons
@@ -6,6 +6,7 @@ const iconMap = {
   developer: <Laptop size={28} />,
   designer: <Palette size={28} />,
   documentation: <FileText size={28} />,
+  moderator: <Users/>
 };
 
 // Define the props type
@@ -35,7 +36,7 @@ const ContributionCard: React.FC<ContributionCardProps> = ({ type, title, descri
       </div>
 
       {/* Button */}
-      <button className="mt-8 border border-blue-500 text-blue-500 rounded-full py-3 px-6 w-fit hover:bg-blue-500 hover:text-white transition duration-300 mx-auto">
+      <button className="mt-8 border border-blue-500 text-blue-500 rounded-full py-3 px-6 w-fit hover:bg-primary-colour hover:cursor-pointer hover:text-white transition duration-300 mx-auto">
         Contribution Guide
       </button>
     </div>

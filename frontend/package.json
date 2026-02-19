@@ -11,13 +11,13 @@
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.18",
+    "embla-carousel-react": "^8.6.0",
     "lucide-react": "^0.574.0",
     "react": "^19.2.0",
     "react-countup": "^6.5.3",
     "react-dom": "^19.2.0",
     "react-icons": "^5.5.0",
     "react-router-dom": "^7.13.0",
-    "swiper": "^12.1.1",
     "tailwindcss": "^4.1.18"
   },
   "devDependencies": {
@@ -26,12 +26,12 @@
     "@types/react": "^19.2.5",
     "@types/react-dom": "^19.2.3",
     "@vitejs/plugin-react-swc": "^4.2.2",
-    "eslint": "^9.39.1",
+    "eslint": "^9.0.0",
     "eslint-plugin-react-hooks": "^7.0.1",
     "eslint-plugin-react-refresh": "^0.4.24",
     "globals": "^16.5.0",
-    "typescript": "~5.9.3",
-    "typescript-eslint": "^8.46.4",
+    "typescript": "~5.8.3",
+    "typescript-eslint": "^8.36.0",
     "vite": "^7.2.4"
   }
 }
