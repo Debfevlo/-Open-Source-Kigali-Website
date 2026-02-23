@@ -8,7 +8,7 @@ const AboutUs = () => {
         <div className="w-full md:w-1/2">
           <p className="text-base font-bold text-primary-colour mb-2">About Us</p>
 
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 max-w-3xl mx-auto leading-tight mb-4">
+          <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 max-w-3xl mx-auto leading-tight mb-4">
             Empowering Rwanda through Open Source.
           </h2>
 
