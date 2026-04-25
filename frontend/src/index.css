@@ -2,6 +2,21 @@
 
 @theme {
   --color-primary-colour: #2b7fff;
-  --color-bold-black: #101828;
+  --color-brand-50: #eff6ff;
+  --color-brand-100: #dbeafe;
+  --color-brand-200: #bfdbfe;
+  --color-brand-300: #93c5fd;
+  --color-brand-400: #60a5fa;
+  --color-brand-600: #1d4ed8;
+  --color-brand-700: #1e40af;
+  --color-brand-800: #1e3a8a;
+  --color-brand-900: #172554;
+  --color-brand-950: #0d1b3e;
+  --color-text-heading:#111827;
+  --color-text-body:#374151;
+  --color-text-supporting:#6b7280;
+  --color-text-diabled:#d1d5db;
+  --color-background-colour:#0a0f1e;
+
 }
 

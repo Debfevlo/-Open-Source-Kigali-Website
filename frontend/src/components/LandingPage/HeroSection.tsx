@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { NavLink } from "react-router";
 
 import StatsUI from "./StatsUI";
 
@@ -28,14 +28,14 @@ const HeroSection = () => {
   {/* Primary Button */}
   <div className=" sm:w-auto inline-flex items-center justify-center bg-primary-colour  px-6 py-4 rounded-full text-white text-base">
     <NavLink to="/Login" className="text-center w-full sm:w-auto">
-      Contribute to OSK
+      Join the community
     </NavLink>
   </div>
 
   {/* Secondary Button */}
   <div className=" sm:w-auto inline-flex items-center gap-2 px-6 py-3 border border-primary-colour text-primary-colour rounded-full hover:bg-primary-colour hover:text-white transition text-center">
     <NavLink to="/Login" className="w-full sm:w-auto">
-      Join the community
+      View Projects
     </NavLink>
   </div>
 </div>

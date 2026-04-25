@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom"
+import { NavLink } from "react-router"
 import peopleImg from '../../assets/images/People.png'
 
 const AboutUs = () => {
@@ -19,7 +19,7 @@ const AboutUs = () => {
           </p>
 
         <div className="inline-flex items-center gap-2 px-6 py-3 border border-primary-colour text-primary-colour rounded-full hover:bg-primary-colour hover:text-white transition">
-          <NavLink to="/Login">Learn More →</NavLink>
+          <NavLink to="/about">Learn More →</NavLink>
         </div>
         
         </div>

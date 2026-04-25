@@ -1,28 +1,40 @@
-import { Routes, Route } from "react-router-dom" 
-import HomePage from "./pages/HomePage"
-import Navbar from "./components/LandingPage/Navbar"
-import About from './pages/About'
-import Projects from "./pages/Projects"
-import Resources from "./pages/Resources"
-import Community from "./pages/Community"
-import Contact from "./pages/Contact"
-import Login from "./pages/Login"
+import { createBrowserRouter } from "react-router";
+import { RouterProvider } from "react-router/dom";
+
+import HomePage from "./pages/HomePage";
+import About from "./pages/About";
+import Community from "./pages/Community";
+import Login from "./pages/Login";
+import Projects from "./pages/Projects";
+import Resources from "./pages/Resources";
+import Contact from "./pages/Contact";
+import RootLayer from "./pages/RootLayer";
+import Partners from "./pages/Partners";
+
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    Component : RootLayer,
+    children : [
+      { index: true, Component: HomePage },
+      {path:'/about', Component: About},
+      {path:'/community', Component: Community },
+      {path:'/solution', Component: Login },
+      {path:'/resources', Component: Resources},
+      {path:'/contact', Component: Contact},
+      {path:'/projects', Component: Projects},
+      {path:'/partners', Component: Partners},
+
+    ]
+    
+  },
+]);
 
 const App = () => {
   return (
-    <div >
-      <Navbar/>
-      <Routes>
-      <Route path="/" element={<HomePage/>}/>
-      <Route path="/about" element={<About/>}/>
-      <Route path="/projects" element={<Projects/>}/>
-      <Route path="/resources" element={<Resources/>}/>
-      <Route path="/community" element={<Community/>}/>
-      <Route path="/contact" element={<Contact/>}/>
-      <Route path="/login" element={<Login/>}/>
-      </Routes>
-    </div>
+    <RouterProvider router={router} />
   )
 }
 
-export default App
+export default App 

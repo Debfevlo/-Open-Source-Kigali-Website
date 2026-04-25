@@ -1,4 +1,4 @@
-import { NavLink } from 'react-router-dom'
+import { NavLink } from "react-router";
 import groupImg from '../../assets/images/group2.png'
 
 const Explore = () => {
@@ -35,7 +35,7 @@ const Explore = () => {
           </p>
 
          <div className="inline-flex items-center gap-2 px-6 py-3 border border-primary-colour text-primary-colour rounded-full hover:bg-primary-colour hover:text-white transition">
-          <NavLink to="/Login">Learn More →</NavLink>
+          <NavLink to="/community">Learn More →</NavLink>
         </div>
         </div>
 
