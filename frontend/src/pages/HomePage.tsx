@@ -7,7 +7,7 @@ import Event from "../components/LandingPage/Event"
 import TestimonialsSection from "../components/LandingPage/Testimonial"
 import CTASection from "../components/LandingPage/CTASection"
 import FAQSection from "../components/LandingPage/FAQ"
-
+import Partners from "../components/LandingPage/Partner"
 
 
 
@@ -16,6 +16,7 @@ const HomePage = () => {
   return (
     <div >
         <HeroSection/>
+        <Partners/>
         <AboutUs/>
         <Explore/>
         <ContributionSection/>

@@ -1,6 +1,8 @@
-import { NavLink } from "react-router";
+
 
 import StatsUI from "./StatsUI";
+import PrimaryButton from "../../UI/PrimaryButton";
+import SecondaryButton from "../../UI/SecondaryButton";
 
 const HeroSection = () => {
   return (
@@ -26,18 +28,16 @@ const HeroSection = () => {
         {/* Hero section Buttons */}
   <div className="flex flex-wrap  gap-4 md:gap-6 justify-center md:justify-start mt-6">
   {/* Primary Button */}
-  <div className=" sm:w-auto inline-flex items-center justify-center bg-primary-colour  px-6 py-4 rounded-full text-white text-base">
-    <NavLink to="/Login" className="text-center w-full sm:w-auto">
+ 
+    <PrimaryButton to="/" className="text-lg ">
       Join the community
-    </NavLink>
-  </div>
+    </PrimaryButton>
+  
 
   {/* Secondary Button */}
-  <div className=" sm:w-auto inline-flex items-center gap-2 px-6 py-3 border border-primary-colour text-primary-colour rounded-full hover:bg-primary-colour hover:text-white transition text-center">
-    <NavLink to="/Login" className="w-full sm:w-auto">
-      View Projects
-    </NavLink>
-  </div>
+  <SecondaryButton to="/about" className="text-base">
+    Know More About Us
+  </SecondaryButton>
 </div>
 
 

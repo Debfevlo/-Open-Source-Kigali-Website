@@ -3,6 +3,8 @@ import map from '../../assets/images/Map.jpg'
 import smartDevices from '../../assets/images/smart devices.jpg'
 import youth from '../../assets/images/Youth meetup.jpg'
 import people from '../../assets/images/People.png'
+import PrimaryButton from "../../UI/PrimaryButton";
+import SecondaryButton from "../../UI/SecondaryButton";
 
 const ProjectSection = () => {
     const projects = [
@@ -52,7 +54,7 @@ const ProjectSection = () => {
     <section className="py-20 px-4 md:px-20 ">
         <div className="flex justify-between flex-wrap items-center mb-8 gap-4 ">
             <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900">Featured Open Source Project</h2>
-            <Link to='' className="text-blue-500 hover:underline text-sm sm:text-base">
+            <Link to='' className="text-blue-500 hover:underline text-base sm:text-base">
                 View All Projects
             </Link>
         </div>
@@ -79,18 +81,12 @@ const ProjectSection = () => {
             {projects[0].description}
           </p>
           <div className="flex gap-3 sm:gap-4 flex-wrap">
-            {projects[0].buttons.map((btn, idx) => (
-              <button
-                key={idx}
-                className={`px-6 sm:px-8 py-2 sm:py-3  font-medium text-sm sm:text-base rounded-full hover:cursor-pointer ${
-                  btn.type === "primary"
-                    ? "bg-blue-500 text-white hover:bg-blue-600"
-                    : "border border-blue-500 text-blue-500 hover:bg-blue-50"
-                }`}
-              >
-                {btn.label}
-              </button>
-            ))}
+            <PrimaryButton to="/">
+              Contribute
+            </PrimaryButton>
+            <SecondaryButton to="/projects">
+              View Project
+            </SecondaryButton>
           </div>
         </div>
       </div>

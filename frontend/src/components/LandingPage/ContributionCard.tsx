@@ -1,5 +1,6 @@
 import { Laptop, Palette, FileText,Users } from "lucide-react";
 import React from "react";
+import PrimaryButton from "../../UI/PrimaryButton";
 
 // Map of contribution types to icons
 const iconMap = {
@@ -36,9 +37,9 @@ const ContributionCard: React.FC<ContributionCardProps> = ({ type, title, descri
       </div>
 
       {/* Button */}
-      <button className="mt-8 border border-blue-500 text-blue-500 rounded-full py-3 px-6 w-fit hover:bg-primary-colour hover:cursor-pointer hover:text-white transition duration-300 mx-auto">
-        Contribution Guide
-      </button>
+      <PrimaryButton to='/' className="text-base">
+           Contribution Guide
+      </PrimaryButton>
     </div>
   );
 };

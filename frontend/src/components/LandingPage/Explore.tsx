@@ -1,21 +1,22 @@
 import { NavLink } from "react-router";
 import groupImg from '../../assets/images/group2.png'
+import PrimaryButton from "../../UI/PrimaryButton";
+import SecondaryButton from "../../UI/SecondaryButton";
 
 const Explore = () => {
   return (
 <section className="bg-[#FFF7F5] py-20 px-4 md:px-20">
     <div className="flex flex-wrap justify-center md:justify-center items-center mb-16 gap-4 md:gap-12">
 
-        <div className="w-full sm:w-auto px-4 sm:px-6 py-3 sm:py-4 rounded-full bg-blue-500 text-white text-sm font-medium hover:cursor-pointer transition">
-          <NavLink to="/Login">Connect with the Community</NavLink>
-        </div>
-         <div className="w-full sm:w-auto px-4 sm:px-6 py-3 sm:py-4 rounded-full border border-blue-400 text-blue-500 text-sm font-medium hover:cursor-pointer hover:bg-blue-500 hover:text-white transition">
-          <NavLink to="/Login">Contribute to Projects</NavLink>
-        </div>
-        <div className="w-full sm:w-auto px-4 sm:px-6 py-3 sm:py-4 rounded-full border border-blue-400 text-blue-500 text-sm font-medium hover:cursor-pointer hover:bg-blue-500 hover:text-white transition">
-          <NavLink to="/Login">Learn with the community</NavLink>
-        </div>
-
+        <PrimaryButton to='/community'>
+          Connect with the Community
+        </PrimaryButton>
+         <SecondaryButton to='/projects'>
+          Contribute to Projects
+         </SecondaryButton>
+        <SecondaryButton to='resources'>
+          Learn with the community
+        </SecondaryButton>
 </div>
 
 
@@ -34,9 +35,9 @@ const Explore = () => {
           creating solutions with local and global impact.
           </p>
 
-         <div className="inline-flex items-center gap-2 px-6 py-3 border border-primary-colour text-primary-colour rounded-full hover:bg-primary-colour hover:text-white transition">
-          <NavLink to="/community">Learn More →</NavLink>
-        </div>
+        <SecondaryButton to='/community'>
+          Learn More →
+        </SecondaryButton>
         </div>
 
         <div className="relative">

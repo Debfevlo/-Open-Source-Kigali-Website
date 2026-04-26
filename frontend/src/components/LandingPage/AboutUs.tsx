@@ -1,5 +1,6 @@
-import { NavLink } from "react-router"
+
 import peopleImg from '../../assets/images/People.png'
+import SecondaryButton from "../../UI/SecondaryButton"
 
 const AboutUs = () => {
   return (
@@ -18,9 +19,9 @@ const AboutUs = () => {
             contribute to open-source projects locally and globally.
           </p>
 
-        <div className="inline-flex items-center gap-2 px-6 py-3 border border-primary-colour text-primary-colour rounded-full hover:bg-primary-colour hover:text-white transition">
-          <NavLink to="/about">Learn More →</NavLink>
-        </div>
+        <SecondaryButton to="/about">
+          Learn More →
+        </SecondaryButton>
         
         </div>
 

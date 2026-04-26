@@ -3,6 +3,7 @@ import LogoImage from "../assets/images/logoopensource.png";
 import { Link, NavLink } from "react-router";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { IoClose } from "react-icons/io5";
+import PrimaryButton from "../UI/PrimaryButton";
 
 const MainNavigation = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -12,10 +13,12 @@ const MainNavigation = () => {
     { name: "Home", path: "/" },
     { name: "About", path: "/about" },
     { name: "Community", path: "/community" },
+    { name: "Event", path: "/event" },
     { name: "Projects", path: "/projects" },
     { name: "Resources", path: "/resources" },
     { name: "Partners", path: "/partners" },
     { name: "Contact", path: "/contact" },
+    
   ];
 
   useEffect(() => {
@@ -107,13 +110,9 @@ const MainNavigation = () => {
             </NavLink>
           ))}
 
-          <NavLink
-            to="/Login"
-            onClick={() => setMobileOpen(false)}
-            className="bg-primary-colour px-6 py-3 rounded-full text-white"
-          >
-            Join the community
-          </NavLink>
+          <PrimaryButton to='/login'>
+            Join the Community
+          </PrimaryButton>
         </div>
       )}
     </>

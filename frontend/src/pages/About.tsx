@@ -374,7 +374,6 @@ const About = () => {
 
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-start md:items-end justify-between gap-10 relative z-10">
           <div>
-            <p className="text-gray-500 text-sm font-mono mb-4">// ready to build?</p>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-white leading-tight">
               Your first PR<br />
               <span className="text-blue-400">is one click away.</span>

@@ -10,6 +10,7 @@ import Resources from "./pages/Resources";
 import Contact from "./pages/Contact";
 import RootLayer from "./pages/RootLayer";
 import Partners from "./pages/Partners";
+import Event from "./pages/Event";
 
 
 const router = createBrowserRouter([
@@ -20,11 +21,13 @@ const router = createBrowserRouter([
       { index: true, Component: HomePage },
       {path:'/about', Component: About},
       {path:'/community', Component: Community },
+      {path:'/event', Component: Event},
       {path:'/solution', Component: Login },
       {path:'/resources', Component: Resources},
       {path:'/contact', Component: Contact},
       {path:'/projects', Component: Projects},
       {path:'/partners', Component: Partners},
+      
 
     ]
     
