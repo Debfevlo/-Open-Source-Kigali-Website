@@ -2,7 +2,7 @@ import { Link } from "react-router";
 import map from '../../assets/images/Map.jpg'
 import smartDevices from '../../assets/images/smart devices.jpg'
 import youth from '../../assets/images/Youth meetup.jpg'
-import people from '../../assets/images/People.png'
+import people from '../../assets/images/People.jpeg'
 import PrimaryButton from "../../UI/PrimaryButton";
 import SecondaryButton from "../../UI/SecondaryButton";
 

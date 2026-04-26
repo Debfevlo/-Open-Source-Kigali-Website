@@ -1,5 +1,5 @@
 
-import peopleImg from '../../assets/images/People.png'
+import peopleImg from '../../assets/images/People.jpeg'
 import SecondaryButton from "../../UI/SecondaryButton"
 
 const AboutUs = () => {

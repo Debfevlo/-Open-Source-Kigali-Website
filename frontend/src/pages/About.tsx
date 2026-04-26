@@ -1,5 +1,5 @@
 import { NavLink } from "react-router";
-import peopleImg from '../assets/images/People.png'
+import peopleImg from '../assets/images/People.jpeg'
 import groupImg from '../assets/images/group2.png'
 
 import { ArrowUpRight, Github, Twitter, Linkedin, Instagram, Facebook } from "lucide-react";

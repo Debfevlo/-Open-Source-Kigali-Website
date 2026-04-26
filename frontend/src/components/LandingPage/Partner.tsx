@@ -46,11 +46,6 @@ const Partner = () => {
             <PrimaryButton to="/partners">
               Become a partner
             </PrimaryButton>
-
-            {/* Secondary */}
-            <SecondaryButton to="/partners">
-              Learn more
-            </SecondaryButton>
           </div>
         </div>
       </div>

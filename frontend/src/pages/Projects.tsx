@@ -17,7 +17,7 @@ import {
   Clock,
 } from "lucide-react";
 import youth from "../assets/images/Youth meetup.jpg";
-import people from "../assets/images/People.png";
+import people from "../assets/images/People.jpeg";
 import smart from "../assets/images/smart devices.jpg";
 import map from "../assets/images/Map.jpg";
 

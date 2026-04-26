@@ -8,7 +8,7 @@ const HeroSection = () => {
   return (
     <section className="relative w-full">
       {/* Background Image */}
-      <div className="absolute inset-0 bg-[url(/heroImage.jpg)] bg-cover bg-center -z-10" />
+      <div className="absolute inset-0 bg-[url(/HeroImage.jpeg)] bg-cover  -z-10" />
       <div className="absolute inset-0 bg-black/20 -z-5"></div>
 
       {/* Content */}

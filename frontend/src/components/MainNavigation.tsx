@@ -34,7 +34,7 @@ const MainNavigation = () => {
     <>
       {/* NAVBAR */}
       <nav
-        className={`flex justify-between items-center px-4 sm:px-8 lg:px-20 fixed py-4 w-full z-50 transition-colors duration-300 ${
+        className={`flex justify-between items-center px-4 sm:px-8 lg:px-20 fixed py-4 w-full z-50 transition-colors duration-300 bg-white ${
           scrolled
             ? "bg-white shadow-xl text-bold-black"
             : "bg-transparent text-white"

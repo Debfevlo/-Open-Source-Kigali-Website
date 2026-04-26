@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Plus, Minus } from "lucide-react";
-import coachImg from "../../assets/images/People.png"; // swap for a real avatar if available
+import coachImg from '../../assets/images/People.jpeg' // swap for a real avatar if available
 
 interface FAQItem {
   id: number;
