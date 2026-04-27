@@ -7,7 +7,7 @@ import millionCoders   from "../../assets/images/p4.png";
 import rwandaGovt      from "../../assets/images/p7.png";
 import EyebrowLabel from "../../UI/EyebrowLable";
 import PrimaryButton from "../../UI/PrimaryButton";
-import SecondaryButton from "../../UI/SecondaryButton";
+
 
 // ─── Data 
 

@@ -2,7 +2,7 @@ import { NavLink } from "react-router";
 import peopleImg from '../assets/images/People.jpeg'
 import groupImg from '../assets/images/group2.png'
 
-import { ArrowUpRight, Github, Twitter, Linkedin, Instagram, Facebook } from "lucide-react";
+import { ArrowUpRight,  Twitter, Linkedin, Instagram, Facebook } from "lucide-react";
 
 // ─── Data
 
@@ -104,8 +104,14 @@ const team = [
   },
 ];
 
+type DotProps = {
+  color: string;
+  size: string;
+  style?: React.CSSProperties;
+};
+
 // Floating dot decoration — purely decorative blobs like in the reference
-const Dot = ({ color, size, style }) => (
+const Dot = ({ color, size, style }: DotProps) => (
   <div
     className={`absolute rounded-full ${color} ${size}`}
     style={{ opacity: 0.85, ...style }}

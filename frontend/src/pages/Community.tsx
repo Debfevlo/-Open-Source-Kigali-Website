@@ -8,14 +8,8 @@ import {
   ArrowUpRight,
   Hash,
   Users,
-  Zap,
-  BookOpen,
-  Code2,
-  Palette,
-  FileText,
   Shield,
-  CheckCircle2,
-  Circle,
+  
 } from "lucide-react";
 
 
@@ -39,98 +33,9 @@ const channels = [
   { name: "off-topic", emoji: "☕", desc: "Because not everything has to be about code.", members: 93, active: false },
 ];
 
-const schedule = [
-  {
-    day: "Monday",
-    short: "Mon",
-    items: [],
-    empty: true,
-  },
-  {
-    day: "Tuesday",
-    short: "Tue",
-    items: [{ time: "7 PM", title: "Issue triage", type: "async", desc: "Maintainers label & assign new GitHub issues" }],
-    empty: false,
-  },
-  {
-    day: "Wednesday",
-    short: "Wed",
-    items: [
-      { time: "7 PM", title: "Technical Session", type: "live", desc: "Live coding, PR reviews, mentorship — the core weekly session" },
-    ],
-    empty: false,
-    featured: true,
-  },
-  {
-    day: "Thursday",
-    short: "Thu",
-    items: [{ time: "Async", title: "Content drops", type: "async", desc: "Tutorials, blog posts, and LinkedIn updates go live" }],
-    empty: false,
-  },
-  {
-    day: "Friday",
-    short: "Fri",
-    items: [{ time: "6 PM", title: "Community Session", type: "live", desc: "Onboarding new members, community Q&A, open discussion" }],
-    empty: false,
-  },
-  {
-    day: "Saturday",
-    short: "Sat",
-    items: [],
-    empty: true,
-  },
-  {
-    day: "Sunday",
-    short: "Sun",
-    items: [{ time: "Async", title: "Week wrap-up", type: "async", desc: "Weekly newsletter + GitHub activity digest posted to all channels" }],
-    empty: false,
-  },
-];
 
-const tracks = [
-  {
-    icon: <Code2 size={20} />,
-    color: "bg-blue-500",
-    lightColor: "bg-blue-50",
-    textColor: "text-blue-600",
-    title: "I want to contribute code",
-    steps: [
-      "Join the Discord and introduce yourself in #general",
-      "Browse #good-first-issues for your first task",
-      "Fork the repo, work on the issue, open a PR",
-      "Get reviewed by a maintainer — usually within 48h",
-      "Merged. You're an OSK contributor.",
-    ],
-  },
-  {
-    icon: <Palette size={20} />,
-    color: "bg-violet-500",
-    lightColor: "bg-violet-50",
-    textColor: "text-violet-600",
-    title: "I'm a designer",
-    steps: [
-      "Join Discord, head to #design-collab",
-      "Pick up an open design issue on GitHub",
-      "Share your Figma/concepts in the channel for feedback",
-      "Iterate with the project maintainer",
-      "Your work ships in the next release.",
-    ],
-  },
-  {
-    icon: <FileText size={20} />,
-    color: "bg-emerald-500",
-    lightColor: "bg-emerald-50",
-    textColor: "text-emerald-600",
-    title: "I write or teach",
-    steps: [
-      "Drop into #general and mention your interest",
-      "Pick a project that needs better docs",
-      "Write a guide, tutorial, or README improvement",
-      "Submit as a PR — docs contributions count the same",
-      "Share it on LinkedIn with the OSK tag.",
-    ],
-  },
-];
+
+
 
 const guidelines = [
   { rule: "Respect everyone, always. Experience level is not a ranking." },

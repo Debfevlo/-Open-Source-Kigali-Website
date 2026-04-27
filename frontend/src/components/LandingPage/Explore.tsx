@@ -1,4 +1,3 @@
-import { NavLink } from "react-router";
 import groupImg from '../../assets/images/group2.png'
 import PrimaryButton from "../../UI/PrimaryButton";
 import SecondaryButton from "../../UI/SecondaryButton";
