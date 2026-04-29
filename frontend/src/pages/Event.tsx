@@ -22,6 +22,7 @@ import EyebrowLabel from "../UI/EyebrowLable";
 
 
 
+
 type EventStatus   = "upcoming" | "live"   | "past";
 type EventType     = "hackathon" | "workshop" | "meetup" | "session" | "talk";
 type FilterType    = EventType   | "all";

@@ -1,42 +1,29 @@
-import { useState, useEffect } from "react";
-import LogoImage from "../assets/images/logoopensource.png";
-import { Link, NavLink } from "react-router";
+import { useState } from "react";
+import { Link, NavLink, useLocation } from "react-router";
 import { RxHamburgerMenu } from "react-icons/rx";
-import { IoClose } from "react-icons/io5";
-import PrimaryButton from "../UI/PrimaryButton";
+import { X } from "lucide-react";
 
-const MainNavigation = () => {
-  const [scrolled, setScrolled] = useState(false);
+import LogoImage from "@/assets/Logo/logoopensource.png";
+import { useScrolled } from "@/hooks";
+import { NAV_LINKS } from "@/constants";
+
+const Navbar = () => {
+  const scrolled = useScrolled(50);
   const [mobileOpen, setMobileOpen] = useState(false);
 
-  const navLinks = [
-    { name: "Home", path: "/" },
-    { name: "About", path: "/about" },
-    { name: "Community", path: "/community" },
-    { name: "Event", path: "/event" },
-    { name: "Projects", path: "/projects" },
-    { name: "Resources", path: "/resources" },
-    { name: "Partners", path: "/partners" },
-    { name: "Contact", path: "/contact" },
-    
-  ];
+  // 🔥 Detect current route
+  const location = useLocation();
+  const isHome = location.pathname === "/";
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  // 🔥 Determine if navbar should be "light" (white bg + dark text)
+  const isLight = !isHome || scrolled;
 
   return (
     <>
-      {/* NAVBAR */}
       <nav
-        className={`flex justify-between items-center px-4 sm:px-8 lg:px-20 fixed py-4 w-full z-50 transition-colors duration-300 bg-white ${
-          scrolled
-            ? "bg-white shadow-xl text-bold-black"
+        className={`flex justify-between items-center px-4 sm:px-8 lg:px-20 fixed py-4 w-full z-20 transition-colors duration-300 ${
+          isLight
+            ? "bg-white shadow-xl text-gray-900"
             : "bg-transparent text-white"
         }`}
       >
@@ -44,25 +31,25 @@ const MainNavigation = () => {
         <Link to="/" className="flex items-center">
           <img
             src={LogoImage}
-            alt="The logo of Open Source Kigali"
-            className="h-10 sm:h-12 md:h-14 w-auto"
+            alt="Open Source Kigali"
+            className="h-10 sm:h-12 md:h-14 w-auto object-contain"
           />
         </Link>
 
-        {/* DESKTOP MENU */}
-        <div className="hidden md:flex space-x-8 text-lg">
-          {navLinks.map((link) => (
+        {/* Desktop nav */}
+        <div className="hidden md:flex items-center space-x-8 text-base">
+          {NAV_LINKS.map((link) => (
             <NavLink
               key={link.path}
               to={link.path}
               className={({ isActive }) =>
                 isActive
-                  ? "text-blue-500 font-semibold"
-                  : `${
-                      scrolled
-                        ? "text-bold-black hover:text-blue-500"
-                        : "text-black hover:text-blue-400"
-                    } font-medium`
+                  ? "text-primary-colour font-semibold"
+                  : `font-medium transition-colors duration-200 ${
+                      isLight
+                        ? "text-gray-900 hover:text-primary-colour"
+                        : "text-white hover:text-[#93bbff]"
+                    }`
               }
             >
               {link.name}
@@ -70,36 +57,43 @@ const MainNavigation = () => {
           ))}
         </div>
 
-        {/* DESKTOP BUTTON */}
-        <div className="hidden md:inline-flex bg-primary-colour px-6 py-3 rounded-full text-white">
-          <NavLink to="/Login">Join the community</NavLink>
-        </div>
+        {/* CTA button (desktop) */}
+        <NavLink
+          to="/contact?category=project"
+          className="hidden md:inline-flex items-center justify-center px-5 py-2.5 rounded-full text-white text-sm font-bold transition-colors duration-200"
+          style={{ background: "#2b7fff" }}
+          onMouseEnter={(e) => (e.currentTarget.style.background = "#1a6fef")}
+          onMouseLeave={(e) => (e.currentTarget.style.background = "#2b7fff")}
+        >
+          Contribute to OSK
+        </NavLink>
 
-        {/* MOBILE BUTTON */}
+        {/* Mobile hamburger */}
         <button
-          onClick={() => setMobileOpen(!mobileOpen)}
-          className="md:hidden z-50"
+          className="md:hidden z-50 p-1"
+          onClick={() => setMobileOpen((o) => !o)}
+          aria-label="Toggle menu"
         >
           {mobileOpen ? (
-            <IoClose
-              className={`w-7 h-7 ${
-                scrolled ? "text-black" : "text-white"
+            <X
+              className={`w-6 h-6 ${
+                isLight ? "text-gray-900" : "text-white"
               }`}
             />
           ) : (
             <RxHamburgerMenu
-              className={`w-7 h-7 ${
-                scrolled ? "text-black" : "text-white"
+              className={`w-6 h-6 transition-colors duration-300 ${
+                isLight ? "text-gray-900" : "text-white"
               }`}
             />
           )}
         </button>
       </nav>
 
-      {/* MOBILE MENU */}
+      {/* Mobile drawer */}
       {mobileOpen && (
         <div className="fixed top-0 left-0 w-full h-screen bg-white z-40 flex flex-col items-center justify-center space-y-6 text-lg">
-          {navLinks.map((link) => (
+          {NAV_LINKS.map((link) => (
             <NavLink
               key={link.path}
               to={link.path}
@@ -110,13 +104,19 @@ const MainNavigation = () => {
             </NavLink>
           ))}
 
-          <PrimaryButton to='/login'>
-            Join the Community
-          </PrimaryButton>
+          {/* CTA button (mobile) */}
+          <NavLink
+            to="/contact?category=project"
+            onClick={() => setMobileOpen(false)}
+            className="mt-8 flex items-center justify-center px-6 py-3 rounded-full text-white text-sm font-black"
+            style={{ background: "#2b7fff" }}
+          >
+            Contribute to OSK
+          </NavLink>
         </div>
       )}
     </>
   );
 };
 
-export default MainNavigation;
+export default Navbar;
