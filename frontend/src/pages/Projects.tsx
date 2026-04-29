@@ -9,7 +9,7 @@ import { Badge } from '@/components/UI/';
 import { Card } from "@/components/UI";
 import { SectionLabel } from "@/components/UI";
 import { useFilter } from "@/hooks";
-import { useDebounce } from "@/hooks";
+
 import { PROJECTS,GOOD_FIRST_ISSUES } from "@/constants";
 import type { Projects,Issue,ProjectStatus,ProjectCategory } from "@/types";
 
@@ -198,7 +198,7 @@ const ProjectCard = ({ project }: { project: Projects }) => (
         </span>
       </div>
 
-      <h4 className="font-black text-gray-900 text-lg tracking-tight mb-1 group-hover:text-[#2b7fff] transition-colors">
+      <h4 className="font-black text-gray-900 text-lg tracking-tight mb-1 group-hover:text-primary-colour transition-colors">
         {project.title}
       </h4>
       <p className="text-[#f4511e] text-xs font-semibold mb-3">{project.tagline}</p>
@@ -290,7 +290,7 @@ const IssueRow = ({ issue }: { issue: Issue }) => (
 
 // ─── Page ─────────────────────────────────────────────────────────────────────
 
-const Projects = () => {
+const Projectt = () => {
   // ── Filter hook — replaces all the inline useState filter logic ──────────
   const {
     filtered,
@@ -307,7 +307,7 @@ const Projects = () => {
   });
 
   // Debounce the search so filtering doesn't fire on every keystroke
-  const debouncedSearch = useDebounce(search, 250);
+  
 
   const featured    = PROJECTS.find((p) => p.featured)!;
   const nonFeatured = filtered.filter((p) => !p.featured);
@@ -575,4 +575,4 @@ const Projects = () => {
   );
 };
 
-export default Projects;
+export default Projectt;

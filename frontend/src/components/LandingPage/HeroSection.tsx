@@ -8,8 +8,14 @@ const HeroSection = () => {
   return (
     <section className="relative w-full">
       {/* Background Image */}
-      <div className="absolute inset-0 bg-[url(/HeroImage.jpeg)] bg-cover  -z-10" />
-      <div className="absolute inset-0 bg-black/20 -z-5"></div>
+      <div
+  className="absolute inset-0 -z-10 bg-cover bg-center bg-no-repeat"
+  style={{
+    backgroundImage: "url('/HeroImage.jpeg')",
+  }}
+/>
+
+<div className="absolute inset-0 -z-10 bg-black/40" />
 
       {/* Content */}
       <div className=" z-10 h-full pt-24 md:pt-32 md:px-20 space-y-8 md:space-y-18 ">

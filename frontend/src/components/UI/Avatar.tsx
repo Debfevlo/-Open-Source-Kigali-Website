@@ -36,7 +36,7 @@ export const Avatar = ({
         className={cn(
           SIZES[size],
           shapeClass,
-          "object-cover flex-shrink-0",
+          "object-cover shrink-0",
           className
         )}
       />
@@ -48,7 +48,7 @@ export const Avatar = ({
       className={cn(
         SIZES[size],
         shapeClass,
-        "flex items-center justify-center text-white font-black flex-shrink-0",
+        "flex items-center justify-center text-white font-black shrink-0",
         className
       )}
       style={{ background: bg }}
