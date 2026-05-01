@@ -22,6 +22,8 @@ interface UseAutoPlayReturn {
  *   const { current, next, prev, goTo, setPaused } =
  *     useAutoPlay({ length: testimonials.length });
  */
+
+
 export const useAutoPlay = ({
   length,
   interval = 4000,

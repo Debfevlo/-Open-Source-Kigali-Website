@@ -2,10 +2,10 @@ import { useState, useCallback } from "react";
 import { NavLink } from "react-router";
 import useEmblaCarousel from "embla-carousel-react";
 import CountUp from "react-countup";
-import { Laptop, Palette, FileText, Users, ChevronLeft, ChevronRight, Quote, GitMerge, UserPlus, GitPullRequest, Zap, ArrowRight, ArrowUpRight, Calendar, Clock, MapPin } from "lucide-react";
+import { Laptop, Palette, FileText, Users, ChevronLeft, ChevronRight, Quote, GitMerge, UserPlus, GitPullRequest, Zap, ArrowRight, ArrowUpRight, Calendar, Clock, MapPin, Plus, Minus, } from "lucide-react";
 import { useAutoPlay } from "@/hooks";
 import { PROJECTS, MARQUEE_PARTNERS } from "@/constants";
-import { HERO_STATS, CONTRIBUTION_SLIDES, EXPLORE_LINKS, HOME_EVENTS, TESTIMONIALS, CTA_ACTIVITY, CTA_STATS } from "@/constants";
+import { HERO_STATS, CONTRIBUTION_SLIDES, EXPLORE_LINKS, HOME_EVENTS, TESTIMONIALS, CTA_ACTIVITY, CTA_STATS, FAQ_ITEMS } from "@/constants";
 import type { ContributionType, HomeEventType, ActivityIconKey } from "@/constants";
 
 // ── Assets
@@ -68,7 +68,7 @@ const HomePage = () => {
   const scrollNext = useCallback(() => emblaApi?.scrollNext(), [emblaApi]);
 
   // FAQ accordion
-
+  const [openFaq, setOpenFaq] = useState<number | null>(null);
 
   // Visible testimonials
   const visibleTestimonials = Array.from({ length: 3 }, (_, i) =>
@@ -310,7 +310,7 @@ const HomePage = () => {
 
       {/* EXPLORE / CONNECT */}
       <section className="bg-[#FFF7F5] py-20 px-4 md:px-20">
-        <EyebrowLabel text='Connect, Contribute and Learn' className="mb-4"/>
+        <EyebrowLabel text='Connect, Contribute and Learn' className="mb-4" />
         {/* Nav pills — from EXPLORE_LINKS constant */}
         <div className="flex flex-wrap justify-center items-center mb-16 gap-4 md:gap-8">
           {EXPLORE_LINKS.map((link) => (
@@ -346,7 +346,7 @@ const HomePage = () => {
               creating solutions with local and global impact.
             </p>
             <SecondaryButton to='/community'>
-               Learn More →
+              Learn More →
             </SecondaryButton>
           </div>
           <div className="rounded-2xl overflow-hidden shadow-lg">
@@ -364,7 +364,7 @@ const HomePage = () => {
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-wrap justify-between items-center mb-12 gap-4">
             <div>
-              <EyebrowLabel text='Community Events' align='left'/>
+              <EyebrowLabel text='Community Events' align='left' />
               <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900">
                 Upcoming Events & Activities
               </h2>
@@ -449,7 +449,7 @@ const HomePage = () => {
       <section className="py-20 px-4 md:px-20 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-14">
-            <EyebrowLabel text="Community Voices" align="center"/>
+            <EyebrowLabel text="Community Voices" align="center" />
             <h2 className="text-xl sm:text-2xl md:text-3xl font-black text-gray-900">
               What Our Contributors Say
             </h2>
@@ -548,7 +548,7 @@ const HomePage = () => {
         <div className="max-w-7xl mx-auto px-6 md:px-20 mb-10">
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6">
             <div>
-              <EyebrowLabel text="Trusted by" align="left"/>
+              <EyebrowLabel text="Trusted by" align="left" />
               <h2 className="text-2xl sm:text-3xl font-black text-gray-900 leading-tight">
                 Organisations that believe
                 <br />
@@ -641,25 +641,66 @@ const HomePage = () => {
       {/* FAQ */}
       <section className="py-20 px-4 md:px-20 bg-gray-50">
         <div className="max-w-3xl mx-auto">
+
+          {/* Badge */}
           <div className="flex justify-center mb-5">
             <span className="inline-block px-4 py-1.5 rounded-full border border-primary-colour/40 bg-primary-colour/10 text-primary-colour text-xs font-semibold tracking-widest uppercase">
               Clear the Confusion
             </span>
           </div>
+
+          {/* Heading */}
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 text-center mb-4">
             Frequently Asked Questions
           </h2>
+
+          {/* Subtitle */}
           <p className="text-center text-gray-500 text-base md:text-lg mb-12">
             Everything you need to know about joining OSK, contributing to projects,
             and what to expect from the community.
           </p>
 
+          {/* Accordion — data from FAQ_ITEMS constant */}
+          <div className="flex flex-col gap-3 mb-8">
+            {FAQ_ITEMS.map((faq) => {
+              const isOpen = openFaq === faq.id;
+              return (
+                <div
+                  key={faq.id}
+                  className="bg-white rounded-2xl border border-gray-100 overflow-hidden hover:shadow-sm transition-shadow duration-200"
+                >
+                  <button
+                    onClick={() => setOpenFaq(isOpen ? null : faq.id)}
+                    className="w-full flex items-center justify-between px-6 py-5 text-left"
+                    aria-expanded={isOpen}
+                  >
+                    <span className="text-gray-900 font-medium text-sm sm:text-base pr-4">
+                      {faq.question}
+                    </span>
+                    <span className="shrink-0 w-7 h-7 rounded-full border border-gray-200 flex items-center justify-center text-gray-500">
+                      {isOpen ? <Minus size={14} /> : <Plus size={14} />}
+                    </span>
+                  </button>
 
+                  {/* Animated answer */}
+                  <div
+                    className={`overflow-hidden transition-all duration-300 ease-in-out ${isOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
+                      }`}
+                  >
+                    <p className="px-6 pb-6 text-gray-500 text-sm sm:text-base leading-relaxed">
+                      {faq.answer}
+                    </p>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
 
-
-          {/* Still have questions */}
-          <div className="bg-white rounded-2xl border border-gray-100 flex flex-col sm:flex-row items-center justify-between px-6 py-5 gap-4 relative overflow-hidden">
+          {/* Still have questions card */}
+          <div className="bg-white rounded-2xl border border-gray-100 flex flex-col sm:flex-row items-center justify-between px-6 py-5 gap-4 overflow-hidden relative">
+            {/* Left accent border */}
             <div className="absolute left-0 top-0 bottom-0 w-1 bg-primary-colour rounded-l-2xl" />
+
             <div className="flex items-center gap-4 pl-4">
               <img
                 src={coachImg}
@@ -667,15 +708,25 @@ const HomePage = () => {
                 className="w-12 h-12 rounded-full object-cover shrink-0"
               />
               <div>
-                <p className="font-semibold text-gray-900 text-sm md:text-base">Still have questions?</p>
-                <p className="text-gray-400 text-xs sm:text-sm">Can't find the answer? Let's chat.</p>
+                <p className="font-semibold text-gray-900 text-sm sm:text-base">
+                  Still have questions?
+                </p>
+                <p className="text-gray-400 text-xs sm:text-sm">
+                  Can't find the answer you're looking for? Let's chat.
+                </p>
               </div>
             </div>
-            <PrimaryButton to='https://discord.com'>
+
+            <a
+              href="https://discord.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="shrink-0 px-5 py-2.5 bg-primary-colour text-white text-sm font-medium rounded-full hover:opacity-90 transition-colors duration-200"
+            >
               Message the Community
-            </PrimaryButton>
-           
+            </a>
           </div>
+
         </div>
       </section>
 
