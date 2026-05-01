@@ -13,13 +13,6 @@ discord:  <MessageCircle size={22} />,
 };
 
 // ─── Sub-components
-const SectionPill = ({ label }: { label: string }) => (
-  <div className="flex mb-5">
-    <span className="inline-block px-4 py-1.5 rounded-full border border-primary-colour/40 bg-primary-colour/10 text-primary-colour text-xs font-semibold tracking-widest uppercase">
-      {label}
-    </span>
-  </div>
-);
 
 
 // ─── Page 

@@ -1,5 +1,4 @@
-import { NavLink } from "react-router";
-import { ArrowUpRight, Twitter, Linkedin, Instagram, Facebook } from "lucide-react";
+import {  Twitter, Linkedin, Instagram, Facebook } from "lucide-react";
 import { ABOUT_STATS, STORY_POINTS, VALUES, ABOUT_TEAM,} from "@/constants";
 import peopleImg from "@/assets/images/People.jpeg";
 import groupImg  from "@/assets/images/group2.png";
@@ -25,13 +24,6 @@ const Dot = ({ color, size, style }: DotProps) => (
 );
 
 // Reusable pill badge used in every section header
-const SectionPill = ({ label }: { label: string }) => (
-  <div className="flex mb-5">
-    <span className="inline-block px-4 py-1.5 rounded-full border border-primary-colour/40 bg-primary-colour/10 text-primary-colour text-xs font-semibold tracking-widest uppercase">
-      {label}
-    </span>
-  </div>
-);
 
 
 //Page 
