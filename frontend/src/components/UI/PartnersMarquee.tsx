@@ -1,6 +1,6 @@
-import { NavLink } from "react-router";
-import { ArrowUpRight } from "lucide-react";
 import { MARQUEE_PARTNERS } from "@/constants";
+import PrimaryButton from "./PrimaryButton";
+import SecondaryButton from "./SecondaryButton";
 
 // How fast the marquee scrolls — higher = slower
 const MARQUEE_DURATION = "30s";
@@ -12,7 +12,12 @@ const track = [
   ...MARQUEE_PARTNERS,
 ];
 
-const PartnersMarquee = () => {
+type Props = {
+  showSecondary?: boolean;
+};
+
+
+const PartnersMarquee = ({ showSecondary = true }: Props) => {
   return (
     <section className="py-16 overflow-hidden" style={{ background: "#f0f6ff" }}>
       {/* Header */}
@@ -34,21 +39,15 @@ const PartnersMarquee = () => {
           </div>
 
           <div className="flex flex-wrap items-center gap-3 shrink-0">
-            <NavLink
-              to="/partners"
-              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-white text-sm font-black transition-colors duration-200"
-              style={{ background: "#2b7fff" }}
-            >
-              Become a partner <ArrowUpRight size={14} />
-            </NavLink>
+            <PrimaryButton to="">
+              Become a partner
+            </PrimaryButton>
 
-            <NavLink
-              to="/partners"
-              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-bold border transition-colors duration-200"
-              style={{ borderColor: "#c5d9ff", color: "#2b7fff" }}
-            >
-              Learn more
-            </NavLink>
+            {showSecondary && (
+              <SecondaryButton to="">
+                Learn more
+              </SecondaryButton>
+            )}
           </div>
         </div>
       </div>

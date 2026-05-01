@@ -12,7 +12,7 @@ const PrimaryButton = ({ to, children,  className = "" }: PrimaryButtonProps) =>
   return (
     <NavLink
       to={to}
-      className={`flex items-center justify-center gap-2 px-7 py-3.5 bg-primary-colour hover:bg-brand-700 hover:scale-95 text-white font-semibold rounded-full transition  ${className}`}
+      className={`flex items-center justify-center gap-2 px-7 py-3.5 bg-primary-colour hover:bg-brand-500 hover:scale-95 text-white font-semibold rounded-full transition  ${className}`}
     >
       {children}
       

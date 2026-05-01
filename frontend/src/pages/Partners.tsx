@@ -1,6 +1,6 @@
-import { NavLink } from "react-router";
-import { ArrowRight, ArrowUpRight, Users, BookOpen, Briefcase, Globe, CheckCircle, Mail, Building2, GraduationCap, Landmark, Heart} from "lucide-react";
-import { PARTNERS, PARTNER_BENEFITS, PARTNERSHIP_STEPS, PARTNER_STATS, WHAT_WE_LOOK_FOR} from "@/constants";
+import { NavLink, Link } from "react-router";
+import { ArrowRight, ArrowUpRight, Users, BookOpen, Briefcase, Globe, CheckCircle, Mail, Building2, GraduationCap, Landmark, Heart } from "lucide-react";
+import { PARTNERS, PARTNER_BENEFITS, PARTNERSHIP_STEPS, PARTNER_STATS, WHAT_WE_LOOK_FOR } from "@/constants";
 import EyebrowLabel from "../components/UI/EyebrowLable";
 import PartnerMarquee from '@/components/UI/PartnersMarquee';
 import PrimaryButton from "@/components/UI/PrimaryButton";
@@ -9,12 +9,12 @@ import SecondaryButton from "@/components/UI/SecondaryButton";
 
 // Icon map for benefits — keeps PARTNER_BENEFITS JSX-free in constants
 const BENEFIT_ICONS: Record<string, React.ReactNode> = {
-  users:     <Users      size={20} />,
-  book:      <BookOpen   size={20} />,
-  globe:     <Globe      size={20} />,
-  briefcase: <Briefcase  size={20} />,
-  building:  <Building2  size={20} />,
-  check:     <CheckCircle size={20} />,
+  users: <Users size={20} />,
+  book: <BookOpen size={20} />,
+  globe: <Globe size={20} />,
+  briefcase: <Briefcase size={20} />,
+  building: <Building2 size={20} />,
+  check: <CheckCircle size={20} />,
 };
 
 // ─── Page 
@@ -37,7 +37,7 @@ const Partners = () => (
       />
 
       <div className="relative max-w-2xl mx-auto text-center">
-        <EyebrowLabel text="OSK Partner Programme" align="center"/>
+        <EyebrowLabel text="OSK Partner Programme" align="center" />
         <h1 className="text-4xl sm:text-5xl md:text-6xl font-black text-gray-900 leading-tight tracking-tight mb-6">
           Turning partnerships into
           <br />
@@ -48,18 +48,18 @@ const Partners = () => (
           hubs to grow Rwanda's open-source ecosystem and build software that matters.
         </p>
         <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
-            <PrimaryButton to="">
-              Become a Partner 
-            </PrimaryButton>
-            <SecondaryButton to="">
-              View Our Partners
-            </SecondaryButton>
+          <PrimaryButton to="">
+            Become a Partner
+          </PrimaryButton>
+          <SecondaryButton to="">
+            View Our Partners
+          </SecondaryButton>
         </div>
       </div>
     </section>
 
     {/* ── MARQUEE */}
-    <PartnerMarquee />
+    <PartnerMarquee showSecondary={false} />
 
     {/* STAT CARDS — from PARTNER_STATS constant */}
     <section className="py-14 px-6 md:px-20 bg-white border-b border-gray-100">
@@ -82,11 +82,7 @@ const Partners = () => (
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
 
         <div>
-          <div className="flex mb-5">
-            <span className="inline-block px-4 py-1.5 rounded-full border border-primary-colour/40 bg-primary-colour/10 text-primary-colour text-xs font-semibold tracking-widest uppercase">
-              The Program
-            </span>
-          </div>
+          <EyebrowLabel text="The Program" align="left" />
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-black text-gray-900 leading-snug mb-5">
             Help us build Rwanda's developer ecosystem.
           </h2>
@@ -99,43 +95,40 @@ const Partners = () => (
             <strong className="text-gray-900">{PARTNERS.length} organisations</strong>{" "}
             across Rwanda and we're actively looking for more.
           </p>
-            <a
-            href="#become"
-            className="inline-flex items-center gap-2 text-sm font-bold text-gray-900 border-b-2 border-gray-900 pb-0.5 hover:text-blue-500 hover:border-blue-500 transition-colors"
-          >
-            Find out more about partnering <ArrowRight size={14} />
-          </a>
+          <PrimaryButton to="" className="md:w-1/2">
+            Partner with Us
+          </PrimaryButton>
         </div>
 
         {/* Partner type breakdown — derived from PARTNERS constant */}
         <div className="grid grid-cols-2 gap-4">
           {[
             {
-              icon:   <GraduationCap size={22} className="text-violet-500" />,
-              label:  "Universities",
-              count:  PARTNERS.filter((p) => p.category === "university").length,
-              bg:     "bg-violet-50",
+              icon: <GraduationCap size={22} className="text-violet-500" />,
+              label: "Universities",
+              count: PARTNERS.filter((p) => p.category === "university").length,
+              bg: "bg-violet-50",
               border: "border-violet-100",
             },
             {
-              icon:   <Building2 size={22} className="text-blue-500" />,
-              label:  "Companies",
-              count:  PARTNERS.filter((p) => p.category === "company").length,
-              bg:     "bg-blue-50",
+              icon: <Building2 size={22} className="text-blue-500" />,
+              label: "Companies",
+              count: PARTNERS.filter((p) => p.category === "company").length,
+              bg: "bg-blue-50",
               border: "border-blue-100",
             },
             {
-              icon:   <Landmark size={22} className="text-emerald-500" />,
-              label:  "Government",
-              count:  PARTNERS.filter((p) => p.category === "government").length,
-              bg:     "bg-emerald-50",
+              icon: <Landmark size={22} className="text-emerald-500" />,
+              label: "Government",
+              count: PARTNERS.filter((p) => p.category === "government").length,
+              bg: "bg-emerald-50",
               border: "border-emerald-100",
             },
             {
-              icon:   <Heart size={22} className="text-rose-500" />,
-              label:  "NGOs & Hubs",
-              count:  PARTNERS.filter((p) => p.category === "ngo").length,
-              bg:     "bg-rose-50",
+              icon: <Heart size={22} className="text-rose-500" />,
+              label: "NGOs & Hubs",
+              count: PARTNERS.filter((p) => p.category === "ngo").length,
+              bg: "bg-rose-50",
               border: "border-rose-100",
             },
           ].map((item, i) => (
@@ -152,7 +145,7 @@ const Partners = () => (
     {/* ── INLINE CTA BANNER */}
     <div className="px-6 md:px-20">
       <div className="max-w-7xl mx-auto">
-        <div className="bg-blue-500 rounded-2xl px-8 py-7 flex flex-col sm:flex-row items-center justify-between gap-5">
+        <div className="bg-background-colour rounded-2xl px-8 py-7 flex flex-col sm:flex-row items-center justify-between gap-5">
           <div>
             <p className="text-white font-black text-lg leading-snug">
               Ready to partner with OSK?
@@ -161,12 +154,9 @@ const Partners = () => (
               We respond to all enquiries within 48 hours.
             </p>
           </div>
-            <a
-            href="#become"
-            className="shrink-0 inline-flex items-center gap-2 px-6 py-3 bg-white text-blue-600 font-bold rounded-full text-sm hover:bg-blue-50 transition-colors"
-          >
+          <SecondaryButton to="">
             Get in touch <ArrowRight size={14} />
-          </a>
+          </SecondaryButton>
         </div>
       </div>
     </div>
@@ -185,12 +175,12 @@ const Partners = () => (
             Partnerships are mutual. We ask for your support and we give something real back —
             every time.
           </p>
-            <a
-            href="#become"
+          <Link
+            to=""
             className="inline-flex items-center gap-2 text-base font-bold text-primary-colour border-b-2 border-primary-colour pb-0.5 hover:opacity-80 transition-colors"
           >
             Get in touch about a partnership <ArrowRight size={14} />
-          </a>
+          </Link>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -315,7 +305,7 @@ const Partners = () => (
             {/* Social proof — derived from PARTNERS constant */}
             <div className="flex items-center gap-3 pt-2 pl-1">
               <div className="flex -space-x-2">
-                {["bg-violet-500","bg-blue-500","bg-emerald-500","bg-orange-500"].map((c, i) => (
+                {["bg-violet-500", "bg-blue-500", "bg-emerald-500", "bg-orange-500"].map((c, i) => (
                   <div
                     key={i}
                     className={`w-8 h-8 rounded-full ${c} border-2 border-white flex items-center justify-center`}
@@ -335,9 +325,9 @@ const Partners = () => (
           {/* Tier guide */}
           <div className="bg-gray-50 rounded-2xl border border-gray-100 p-7">
             <p className="text-sm font-bold text-gray-500 uppercase tracking-widest mb-5">
-              Not sure which tier fits?
+              Not sure what do?
             </p>
-            
+
             <div className="mt-7 pt-6 border-t border-gray-200">
               <p className="text-sm text-gray-400">
                 We respond to all partnership enquiries within{" "}
