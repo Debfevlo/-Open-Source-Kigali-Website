@@ -472,7 +472,7 @@ const Event = () => {
               <button
                 key={f.key}
                 onClick={() => setFilter("type", f.key)}
-                className="px-4 py-2 rounded-xl text-xs font-bold transition-all duration-200"
+                className="px-4 py-2 rounded-xl text-xs font-bold transition-all duration-200 hover:cursor-pointer"
                 style={
                   filters.type === f.key
                     ? { background: "#2b7fff", color: "#fff" }

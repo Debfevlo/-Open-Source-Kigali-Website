@@ -1,20 +1,14 @@
 import { NavLink }          from "react-router";
-import {
-  Github, ArrowUpRight, GitPullRequest,
-  Users, AlertCircle, Star, GitFork,
-  Search, Filter, ExternalLink,
-  Code2, Zap, CheckCircle2, Clock,
-} from "lucide-react";
+import {Github, ArrowUpRight, GitPullRequest, Users, AlertCircle, Star, GitFork, Search, Filter, ExternalLink, Code2, Zap, CheckCircle2, Clock} from "lucide-react";
 import { Badge } from '@/components/UI/';
 import { Card } from "@/components/UI";
 import { SectionLabel } from "@/components/UI";
 import { useFilter } from "@/hooks";
-
 import { PROJECTS,GOOD_FIRST_ISSUES } from "@/constants";
 import type { Projects,Issue,ProjectStatus,ProjectCategory } from "@/types";
+import EyebrowLabel from "@/components/UI/EyebrowLable";
 
 // ─── Meta maps
-
 const STATUS_META: Record<ProjectStatus, {
   label: string; dot: string; badge: string; text: string;
 }> = {
@@ -47,7 +41,6 @@ const DIFFICULTY_STYLES: Record<Issue["difficulty"], string> = {
 };
 
 // ─── Sub-components 
-
 const StatusBadge = ({ status }: { status: ProjectStatus }) => {
   const m = STATUS_META[status];
   return (
@@ -72,7 +65,6 @@ const LangDot = ({ color, name }: { color: string; name: string }) => (
 );
 
 // ─── Featured Card 
-
 const FeaturedCard = ({ project }: { project: Projects }) => (
   <div className="bg-white rounded-2xl border border-[#c5d9ff] overflow-hidden shadow-sm mb-6 group">
     <div className="md:flex md:items-stretch">
@@ -174,8 +166,7 @@ const FeaturedCard = ({ project }: { project: Projects }) => (
   </div>
 );
 
-// ─── Project Card ──────────────────────────────────────────────────────────────
-
+// ─── Project Card 
 const ProjectCard = ({ project }: { project: Projects }) => (
   <Card hover className="flex flex-col group">
     <div className="h-44 overflow-hidden rounded-t-2xl relative">
@@ -255,8 +246,7 @@ const ProjectCard = ({ project }: { project: Projects }) => (
   </Card>
 );
 
-// ─── Issue Row ────────────────────────────────────────────────────────────────
-
+// ─── Issue Row
 const IssueRow = ({ issue }: { issue: Issue }) => (
   <a
     href={issue.link}
@@ -288,10 +278,9 @@ const IssueRow = ({ issue }: { issue: Issue }) => (
   </a>
 );
 
-// ─── Page ─────────────────────────────────────────────────────────────────────
-
+// ─── Page
 const Projectt = () => {
-  // ── Filter hook — replaces all the inline useState filter logic ──────────
+  // ── Filter hook — replaces all the inline useState filter logic 
   const {
     filtered,
     search,
@@ -307,7 +296,6 @@ const Projectt = () => {
   });
 
   // Debounce the search so filtering doesn't fire on every keystroke
-  
 
   const featured    = PROJECTS.find((p) => p.featured)!;
   const nonFeatured = filtered.filter((p) => !p.featured);
@@ -323,7 +311,7 @@ const Projectt = () => {
     <>
       
 
-      {/* ── Hero ─────────────────────────────────────────────────────────── */}
+      {/* ── Hero */}
       <section
         className="pt-32 pb-0 px-6 md:px-20 relative overflow-hidden"
         style={{ background: "#0a0f1e" }}
@@ -341,9 +329,7 @@ const Projectt = () => {
         />
 
         <div className="relative max-w-7xl mx-auto">
-          <p className="text-[#5b9fff] font-mono text-xs tracking-widest uppercase mb-6">
-            — Open Source Projects
-          </p>
+          <EyebrowLabel text=" Open Source Projects" align="left"/>
 
           <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-10 mb-12">
             <div>
@@ -394,7 +380,7 @@ const Projectt = () => {
                 <button
                   key={s}
                   onClick={() => setFilter("status", s)}
-                  className="px-3 py-1.5 rounded-full text-xs font-semibold transition-colors capitalize"
+                  className="px-3 py-1.5 rounded-full text-xs font-semibold transition-colors capitalize hover:cursor-pointer"
                   style={
                     filters.status === s
                       ? { background: "#2b7fff", color: "#fff" }
@@ -413,7 +399,7 @@ const Projectt = () => {
               <button
                 key={cat.key}
                 onClick={() => setFilter("category", cat.key)}
-                className="px-5 py-3 text-sm font-semibold whitespace-nowrap border-b-2 transition-colors"
+                className="px-5 py-3 text-sm font-semibold whitespace-nowrap border-b-2 transition-colors hover:cursor-pointer"
                 style={
                   filters.category === cat.key
                     ? { borderColor: "#2b7fff", color: "#5b9fff" }
@@ -427,7 +413,7 @@ const Projectt = () => {
         </div>
       </section>
 
-      {/* ── Project list ──────────────────────────────────────────────────── */}
+      {/* ── Project list */}
       <section className="py-12 px-6 md:px-20 bg-gray-50">
         <div className="max-w-7xl mx-auto">
 
@@ -457,7 +443,7 @@ const Projectt = () => {
         </div>
       </section>
 
-      {/* ── Good first issues ─────────────────────────────────────────────── */}
+      {/* ── Good first issues */}
       <section id="issues" className="py-20 px-6 md:px-20 bg-white">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-5 gap-12 items-start">
 
@@ -506,7 +492,7 @@ const Projectt = () => {
         </div>
       </section>
 
-      {/* ── Propose a project ─────────────────────────────────────────────── */}
+      {/* ── Propose a project */}
       <section
         className="py-20 px-6 md:px-20 relative overflow-hidden"
         style={{ background: "#0a0f1e" }}
