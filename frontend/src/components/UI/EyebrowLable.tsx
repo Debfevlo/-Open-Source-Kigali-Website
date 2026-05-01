@@ -1,6 +1,6 @@
 type EyebrowLabelProps = {
   text: string;
-  align?: "left" | "center";
+  align?: "left" | "center" | 'right';
   className?: string;
 };
 

@@ -3,9 +3,10 @@ import { Link, NavLink, useLocation } from "react-router";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { X } from "lucide-react";
 
-import LogoImage from "@/assets/Logo/logoopensource.png";
+import LogoImage from "@/assets/Logo/OSK-primary-logo.svg";
 import { useScrolled } from "@/hooks";
 import { NAV_LINKS } from "@/constants";
+import PrimaryButton from "./UI/PrimaryButton";
 
 const Navbar = () => {
   const scrolled = useScrolled(50);
@@ -58,16 +59,9 @@ const Navbar = () => {
         </div>
 
         {/* CTA button (desktop) */}
-        <NavLink
-          to="/contact?category=project"
-          className="hidden md:inline-flex items-center justify-center px-5 py-2.5 rounded-full text-white text-sm font-bold transition-colors duration-200"
-          style={{ background: "#2b7fff" }}
-          onMouseEnter={(e) => (e.currentTarget.style.background = "#1a6fef")}
-          onMouseLeave={(e) => (e.currentTarget.style.background = "#2b7fff")}
-        >
+        <PrimaryButton to="" className="hidden md:inline-flex">
           Contribute to OSK
-        </NavLink>
-
+        </PrimaryButton>
         {/* Mobile hamburger */}
         <button
           className="md:hidden z-50 p-1"
@@ -105,14 +99,9 @@ const Navbar = () => {
           ))}
 
           {/* CTA button (mobile) */}
-          <NavLink
-            to="/contact?category=project"
-            onClick={() => setMobileOpen(false)}
-            className="mt-8 flex items-center justify-center px-6 py-3 rounded-full text-white text-sm font-black"
-            style={{ background: "#2b7fff" }}
-          >
+          <PrimaryButton to="">
             Contribute to OSK
-          </NavLink>
+          </PrimaryButton>
         </div>
       )}
     </>

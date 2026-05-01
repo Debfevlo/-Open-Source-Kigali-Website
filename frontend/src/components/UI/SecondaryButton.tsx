@@ -11,7 +11,7 @@ const SecondaryButton = ({ to, children, className = "" }: SecondaryButtonProps)
   return (
     <NavLink
       to={to}
-      className={`inline-flex items-center justify-center px-6 py-3 border border-blue-500 text-blue-500 rounded-full  font-medium hover:bg-brand-900 hover:border-none hover:text-brand-50  hover:scale-95 transition-all ${className}`}
+      className={`inline-flex items-center justify-center px-6 py-3 border border-blue-500 text-blue-500 rounded-full  font-medium hover:bg-brand-700 hover:border-none hover:text-white  hover:scale-95 transition-all ${className}`}
     >
       {children}
     </NavLink>
